@@ -550,16 +550,16 @@ const PROJECTEN = [
   {
     slug: "flordi",
     kaartNaam: "Studio Yumi × Flordi",
-    wat: "huisstijl · linodruk · illustratie",
+    wat: "schoolproject · huisstijl · illustratie",
     wip: true,
     kaartBeeld: "assets/img/yumi/flordi-cafe-collage.webp",
-    rol: "Teamproject met 3 andere studenten in Studio Yumi. De creatieve kant ligt grotendeels bij mij: ik teken de illustraties en de logo's, snijd de linoletters en zorg ervoor dat elk onderdeel zijn eigen gezicht krijgt.",
+    rol: "Schoolproject in team met 3 andere studenten, als Studio Yumi. De creatieve kant ligt grotendeels bij mij: ik teken de illustraties en de logo's, snijd de linoletters en zorg ervoor dat elk onderdeel zijn eigen gezicht krijgt.",
     geleerd: "",
     titelVet: "",
     titelScript: "",
     naam: "Studio Yumi × Flordi",
-    type: "teamproject · huisstijl",
-    kort: "Een warme, handgemaakte huisstijl voor Flordi, een coöperatie in Gent met een café, een markt, coworking en events.",
+    type: "schoolproject · huisstijl",
+    kort: "Een schoolproject: een warme, handgemaakte huisstijl voor Flordi, een coöperatie in Gent met een café, een markt, coworking en events.",
     sticker: null,
     hero: "assets/img/yumi/flordi-cafe-collage.webp",
     tools: ["linodruk", "strijkparels", "schetsboek", "digitale uitwerking"],
@@ -567,7 +567,7 @@ const PROJECTEN = [
     secties: [
       {
         titel: "De opdracht",
-        tekst: ["Met Studio Yumi werk ik aan een nieuwe huisstijl voor Flordi, een coöperatie in Gent met een café, een markt, coworking en events zoals workshops, talks, films en gesprekskringen. Het café is net geopend en Flordi zoekt een definitieve huisstijl die net zo warm en eigen is als de plek zelf."]
+        tekst: ["Dit is een schoolproject. Met Studio Yumi, ons team van vier studenten, werk ik aan een nieuwe huisstijl voor Flordi, een coöperatie in Gent met een café, een markt, coworking en events zoals workshops, talks, films en gesprekskringen. Het café is net geopend en Flordi zoekt een definitieve huisstijl die net zo warm en eigen is als de plek zelf."]
       },
       {
         titel: "Handgemaakt",
