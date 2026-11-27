@@ -41,19 +41,15 @@
       </div>
     </section>
 
-    <section class="spread roze stress" aria-labelledby="stress-kop">
-      <div class="reveal">
-        <h2 class="kop kop--klein" id="stress-kop">Ik geraak soms een beetje gestresseerd</h2>
-        <p>En dat is niet erg. Kies een programma en zie hoe ik me voel.</p>
-        <div class="stress__knoppen" id="stress-knoppen" role="group" aria-label="Kies een programma"></div>
-      </div>
-      <div class="reveal" aria-live="polite">
-        <div class="stress__beeld"><img id="stress-img" src="assets/img/about/stress-1.webp" alt=""></div>
-        <p class="ballon" id="stress-tekst">Kies een programma…</p>
-        <div class="meter">
-          <div class="meter__label"><span>zen</span><span>stress-o-meter</span><span>help</span></div>
-          <div class="meter__balk"><div class="meter__vul" id="stress-meter"></div></div>
+    <section class="spread roze speel" aria-labelledby="speel-kop">
+      <p class="speel__hint" id="speel-kop">Hier werk ik mee… <span>psst, klik er maar eens op</span></p>
+      <div class="speel__veld">
+        <div class="speel__tekening">
+          <p class="speel__ballon" id="stress-tekst" aria-live="polite" hidden></p>
+          <img id="stress-img" src="assets/img/about/stress-1.webp" alt="Tekening van Samira aan haar laptop">
+          <div class="thermo" aria-hidden="true"><span>help</span><div class="thermo__buis"><div class="thermo__vul" id="stress-meter"></div></div><span>zen</span></div>
         </div>
+        <div class="speel__labels" id="stress-knoppen" role="group" aria-label="Programma's waarmee ik werk"></div>
       </div>
     </section>
 

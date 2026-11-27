@@ -480,3 +480,67 @@ main > .spread:first-child, #detail > .spread:nth-child(2) { animation: spread-i
 .figma-video__start:focus-visible { outline: 3px solid var(--mag); outline-offset: -3px; }
 .figma-video__play { position: absolute; padding: 12px 26px; border-radius: 40px; background: var(--mag); color: var(--wit); font: 600 17px var(--sans); box-shadow: 0 8px 24px rgba(0, 0, 0, .35); transition: transform .2s; }
 .figma-video__start:hover .figma-video__play { transform: scale(1.06); }
+
+/* =========================================================
+   Notes 27/11
+   ========================================================= */
+
+/* Ballonnetje bij de koffietassen */
+.tip { top: 4%; right: 2%; font-size: 15px; padding: 9px 16px; }
+
+/* Korte sneak peek */
+.collage--breed { margin-top: 24px; grid-template-columns: repeat(12, 1fr); grid-auto-rows: 60px; }
+.collage--breed .c1 { grid-column: 1 / 5; grid-row: span 5; }
+.collage--breed .c2 { grid-column: 5 / 9; grid-row: span 4; }
+.collage--breed .c3 { grid-column: 9 / 13; grid-row: span 3; }
+.collage--breed .c4 { grid-column: 9 / 13; grid-row: span 3; }
+.collage--breed .c5 { grid-column: 5 / 7; grid-row: span 3; }
+.collage--breed .c6 { grid-column: 7 / 9; grid-row: span 3; }
+.sneak__knop { margin-top: 28px; justify-content: center; }
+
+/* Cases: label work in progress */
+.kaart__wip { margin-left: 6px; padding: 2px 9px; border-radius: 20px; background: var(--mag); color: var(--wit); font-style: normal; font-size: 11px; letter-spacing: .06em; }
+
+/* Projectpagina: work in progress */
+.wip { text-align: center; grid-template-columns: 1fr; }
+.wip h2 { font-size: clamp(40px, 6vw, 84px); }
+
+/* Contact: zin op één regel */
+.samen .intro { max-width: none; }
+@media (min-width: 900px) { .samen .intro { white-space: nowrap; } }
+
+/* Stressspelletje */
+.speel { padding-bottom: clamp(30px, 5vw, 60px); }
+.speel__hint { margin: 0; font: italic 400 clamp(26px, 3vw, 38px)/1.1 var(--serif); color: var(--mag); }
+.speel__hint span { display: block; margin-top: 6px; font: 15px var(--sans); color: var(--pruim); opacity: .75; }
+.speel__veld { position: relative; height: 520px; margin-top: 10px; }
+.speel__tekening { position: absolute; left: 50%; top: 50%; width: min(340px, 36%); transform: translate(-50%, -50%); }
+.speel__tekening img { width: 100%; transition: opacity .16s, transform .16s; }
+.speel__tekening img.wissel { opacity: 0; transform: scale(.95); }
+.speel__ballon { position: absolute; z-index: 2; bottom: 88%; left: -30%; max-width: 250px; margin: 0; padding: 12px 16px; border-radius: 18px 18px 4px 18px; background: var(--wit); color: var(--pruim); font-size: 15px; line-height: 1.4; box-shadow: 0 8px 20px rgba(86, 56, 73, .15); }
+.speel__ballon.pop { animation: pop .35s cubic-bezier(.3, 1.6, .5, 1); }
+@keyframes pop { from { transform: scale(.6) rotate(-6deg); opacity: 0; } }
+.speel__labels button {
+  position: absolute; left: var(--x); top: var(--y);
+  padding: 5px 14px; border: 1.5px dashed var(--mag); border-radius: 8px;
+  background: var(--wit); color: var(--mag);
+  font: italic 400 clamp(17px, 1.6vw, 21px) var(--serif);
+  transform: rotate(var(--r)); cursor: pointer;
+  transition: transform .25s cubic-bezier(.3, 1.6, .5, 1), background .2s, color .2s;
+}
+.speel__labels button:hover { transform: rotate(0) scale(1.08); }
+.speel__labels button[aria-pressed="true"] { background: var(--mag); color: var(--wit); border-style: solid; }
+.speel__labels button.wiebel { animation: wiebelknop .45s ease-in-out 2; }
+.thermo { position: absolute; right: -54px; top: 8%; bottom: 8%; display: flex; flex-direction: column; align-items: center; gap: 6px; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--pruim); }
+.thermo__buis { position: relative; flex: 1; width: 16px; border-radius: 10px; background: rgba(86, 56, 73, .15); overflow: hidden; }
+.thermo__vul { position: absolute; left: 0; right: 0; bottom: 0; height: 6%; border-radius: 10px; background: linear-gradient(0deg, var(--lime), var(--mag), var(--pruim)); transition: height .6s cubic-bezier(.3, 1.4, .5, 1); }
+
+@media (max-width: 760px) {
+  .speel__veld { height: auto; display: flex; flex-direction: column; align-items: center; }
+  .speel__tekening { position: relative; left: auto; top: auto; transform: none; width: 230px; margin: 90px 50px 10px 0; }
+  .speel__ballon { left: -10%; bottom: 96%; max-width: 230px; font-size: 14px; }
+  .speel__labels { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 10px; }
+  .speel__labels button { position: static; }
+  .collage--breed { grid-template-columns: 1fr 1fr; grid-auto-rows: auto; }
+  .collage--breed figure { grid-column: auto !important; grid-row: auto !important; }
+}

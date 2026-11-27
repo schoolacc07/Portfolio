@@ -77,7 +77,7 @@ el.innerHTML = `
       <p>${p.rol || ""}</p>
     </div>
     <div>
-      <h2>Programma's</h2>
+      <h2>${p.wip ? "Technieken" : "Programma's"}</h2>
       <ul class="chips">${p.tools.map(t => `<li>${t}</li>`).join("")}</ul>
       <h2 style="margin-top:18px">Skills</h2>
       <ul class="chips">${p.skills.map(t => `<li>${t}</li>`).join("")}</ul>
@@ -87,7 +87,11 @@ el.innerHTML = `
 
   ${rest.map(blok).join("")}
 
-  ${p.geleerd ? `
+  ${p.wip ? `
+  <section class="spread pruim geleerd wip reveal">
+    <h2>Work in progress</h2>
+    <p>Dit project loopt nog. Come back to see more!</p>
+  </section>` : p.geleerd ? `
   <section class="spread pruim geleerd reveal">
     <h2>Wat ik leerde</h2>
     <p>${p.geleerd.split(" ").map((w, i) => `<span class="w" style="--w:${i}">${w}</span>`).join(" ")}</p>

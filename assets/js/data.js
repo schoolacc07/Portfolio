@@ -546,5 +546,55 @@ const PROJECTEN = [
       }
     ],
     disclaimer: "Dit is een schoolproject. De schilderijen van Wassily Kandinsky zijn enkel gebruikt als onderzoek en referentie; het logo, de stickers en het cadeaupapier zijn mijn eigen ontwerpen."
+  },
+  {
+    slug: "flordi",
+    kaartNaam: "Studio Yumi × Flordi",
+    wat: "huisstijl · linodruk · illustratie",
+    wip: true,
+    kaartBeeld: "assets/img/yumi/flordi-cafe-collage.webp",
+    rol: "Teamproject met 3 andere studenten in Studio Yumi. De creatieve kant ligt grotendeels bij mij: ik teken de illustraties en de logo's, snijd de linoletters en zorg ervoor dat elk onderdeel zijn eigen gezicht krijgt.",
+    geleerd: "",
+    titelVet: "",
+    titelScript: "",
+    naam: "Studio Yumi × Flordi",
+    type: "teamproject · huisstijl",
+    kort: "Een warme, handgemaakte huisstijl voor Flordi, een coöperatie in Gent met een café, een markt, coworking en events.",
+    sticker: null,
+    hero: "assets/img/yumi/flordi-cafe-collage.webp",
+    tools: ["linodruk", "strijkparels", "schetsboek", "digitale uitwerking"],
+    skills: ["huisstijl", "illustratie", "logo-ontwerp", "typografie", "teamwork"],
+    secties: [
+      {
+        titel: "De opdracht",
+        tekst: ["Met Studio Yumi werk ik aan een nieuwe huisstijl voor Flordi, een coöperatie in Gent met een café, een markt, coworking en events zoals workshops, talks, films en gesprekskringen. Het café is net geopend en Flordi zoekt een definitieve huisstijl die net zo warm en eigen is als de plek zelf."]
+      },
+      {
+        titel: "Handgemaakt",
+        tekst: ["Onze doelgroep: jonge mensen, makers en doeners. Daarom kiezen we bewust voor een handgemaakte aanpak in plaats van strakke digitale vormen: linodruk, strijkparels en handgetekende illustraties.", "De letters snijd ik uit in lino, de illustraties teken ik ter plaatse in mijn schetsboek en daarna werk ik ze digitaal uit."],
+        galerij: [
+          { src: "assets/img/yumi/flordi-schetsen.webp", bijschrift: "Schetsen van Café Flordi, ter plaatse getekend" },
+          { src: "assets/img/yumi/lino.webp", bijschrift: "Uitgesneden linoletters" },
+          { src: "assets/img/yumi/stoelen.webp", bijschrift: "Terrasstoelen in houtskool" },
+          { src: "assets/img/yumi/flordi-cafe-collage.webp", bijschrift: "Het café-logo op de gevel" }
+        ]
+      },
+      {
+        titel: "Elk onderdeel zijn eigen kleur",
+        tekst: ["Elk onderdeel van Flordi krijgt zijn eigen kleur en tekeningen: Café, Markt, Event, Co-work en Invest. Van een eigen patroon in de linodruk tot een eigen klein kleurenpalet. Zo wordt elk onderdeel herkenbaar, op de website én op de socials."],
+        galerij: [
+          { src: "assets/img/yumi/labels.webp", bijschrift: "Labels in linodruk-letters" },
+          { src: "assets/img/yumi/sketch-cowork-invest.webp", bijschrift: "Schetsen voor Co-work en Invest" },
+          { src: "assets/img/yumi/invest.webp", bijschrift: "Schets en logo voor Flordi Invest" },
+          { src: "assets/img/yumi/sketch-event.webp", bijschrift: "Schetsen voor Event" }
+        ]
+      },
+      {
+        titel: "Typografie",
+        tekst: ["Een ruwe, gestempelde letter voor het logo en de titels, en een ronde letter voor de basistekst."],
+        beeld: "assets/img/yumi/typografie.webp"
+      }
+    ],
+    disclaimer: "Dit is een lopend schoolproject van Studio Yumi voor Flordi. Wat je hier ziet, zijn schetsen en tussenstappen."
   }
 ];

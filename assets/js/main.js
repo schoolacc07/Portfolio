@@ -10,7 +10,7 @@ function bouwCases() {
       <div class="kaart__beeld ${vrij.includes(p.slug) ? "vrij" : ""}">
         <img src="${p.kaartBeeld || p.hero}" alt="" loading="lazy">
       </div>
-      <span class="kaart__nr">(${String(i + 1).padStart(2, "0")})</span>
+      <span class="kaart__nr">(${String(i + 1).padStart(2, "0")})${p.wip ? ' <em class="kaart__wip">work in progress</em>' : ""}</span>
       <h2>${p.kaartNaam || p.naam}</h2>
       <p>${p.wat || p.type}</p>
     </a>`).join("");
@@ -28,29 +28,40 @@ const STRESS = [
   { app: "After Effects", img: 5, niveau: 100, tekst: "De keyframes doen wat ze willen. Ik neem even pauze." }
 ];
 
+// Plek van elk label rond de tekening: links (x%), boven (y%), draaiing
+const PLEK = [[16,10,-7],[10,38,5],[14,66,-4],[26,86,6],[64,6,5],[72,34,-6],[70,62,4],[58,86,-5]];
+
 function bouwStress() {
   const knoppen = document.getElementById("stress-knoppen");
   if (!knoppen) return;
   const img = document.getElementById("stress-img");
-  const tekst = document.getElementById("stress-tekst");
+  const ballon = document.getElementById("stress-tekst");
   const meter = document.getElementById("stress-meter");
 
-  knoppen.innerHTML = STRESS.map((s, i) => `<button type="button" data-i="${i}" aria-pressed="false">${s.app}</button>`).join("");
+  knoppen.innerHTML = STRESS.map((s, i) => {
+    const [x, y, r] = PLEK[i % PLEK.length];
+    return `<button type="button" data-i="${i}" aria-pressed="false" style="--x:${x}%;--y:${y}%;--r:${r}deg">${s.app}</button>`;
+  }).join("");
 
   function kies(i) {
     const s = STRESS[i];
-    knoppen.querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", b.dataset.i == i));
+    knoppen.querySelectorAll("button").forEach(b => {
+      const aan = b.dataset.i == i;
+      b.setAttribute("aria-pressed", aan);
+      b.classList.toggle("wiebel", aan);
+    });
     const nieuw = `assets/img/about/stress-${s.img}.webp`;
     if (!img.src.endsWith(nieuw)) {
       img.classList.add("wissel");
       setTimeout(() => { img.src = nieuw; img.classList.remove("wissel"); }, 160);
     }
     img.alt = `Tekening van Samira aan haar laptop: ${s.app}`;
-    tekst.textContent = `${s.app}: ${s.tekst}`;
-    meter.style.width = s.niveau + "%";
+    ballon.hidden = false;
+    ballon.textContent = s.tekst;
+    ballon.classList.remove("pop"); void ballon.offsetWidth; ballon.classList.add("pop");
+    meter.style.height = s.niveau + "%";
   }
   knoppen.addEventListener("click", e => { const b = e.target.closest("button"); if (b) kies(+b.dataset.i); });
-  kies(0);
 }
 
 // ---------- Contact: mail me / bel me tonen je gegevens ----------
@@ -71,9 +82,7 @@ function bouwContact() {
       </div>
     </div>`;
 
-  toonMail.innerHTML =
-    kaartje("school", SITE.schoolMail, `mailto:${SITE.schoolMail}`, "mail") +
-    kaartje("persoonlijk", SITE.persoonlijkeMail, `mailto:${SITE.persoonlijkeMail}`, "mail");
+  toonMail.innerHTML = kaartje("e-mail", SITE.schoolMail, `mailto:${SITE.schoolMail}`, "mail");
   toonBel.innerHTML = kaartje("gsm", SITE.telefoon, `tel:${SITE.telefoonLink}`, "bel");
 
   function zet(knop, paneel, open) {
