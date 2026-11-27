@@ -544,3 +544,9 @@ main > .spread:first-child, #detail > .spread:nth-child(2) { animation: spread-i
   .collage--breed { grid-template-columns: 1fr 1fr; grid-auto-rows: auto; }
   .collage--breed figure { grid-column: auto !important; grid-row: auto !important; }
 }
+
+/* Ballonnetje alleen bij hover (op aanraakschermen blijft het zichtbaar) */
+@media (hover: hover) {
+  .held__beeld .tip { opacity: 0; transform: translateY(8px) rotate(4deg) scale(.8); animation: none; transition: opacity .25s, transform .3s cubic-bezier(.3, 1.6, .5, 1); pointer-events: none; }
+  .held__beeld a:hover .tip, .held__beeld a:focus-visible .tip { opacity: 1; transform: rotate(4deg) scale(1); }
+}
